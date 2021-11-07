@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgWave2(props) {
+export default function SvgWave2(props) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 189" {...props}>
       <path
@@ -11,4 +11,3 @@ function SvgWave2(props) {
   );
 }
 
-export default SvgWave2;
