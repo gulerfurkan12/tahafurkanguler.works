@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-// import { Logo, Wave, Wave2 } from "./components/icons/index";
 import Logo from './components/icons/Logo';
 import Wave from './components/icons/Wave';
 import Wave2 from './components/icons/Wave2';
