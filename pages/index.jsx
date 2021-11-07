@@ -1,29 +1,24 @@
-import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
-import { Logo, Wave, Wave2 } from "./components/icons/index";
+// import { Logo, Wave, Wave2 } from "./components/icons/index";
+import Logo from './components/icons/Logo';
+import Wave from './components/icons/Wave';
+import Wave2 from './components/icons/Wave2';
 import { BsBehance, BsInstagram, BsPlus } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
 import {CircleProgress} from 'react-gradient-progress'
 import { useInView } from 'react-intersection-observer';
 import {getTable} from '../lib/airtable'
+import Image from 'next/image'
 
 
-
-function Home({works}) {
-  if(works){
-    console.log(works[0].Image);
-  }
-  const [sticky, setSticky] = useState(false);
-  const [toggle, setToggle] = useState(false);
-  const [percentage, setPercentege] = useState(0);
+function Home({works, about}) {
   const header = useRef(null);
   const toggleButton = useRef(null);
   const menu = useRef(null);
 
   const {ref, inView, entry} = useInView()
   
-
   if (typeof window !== "undefined") {
     const handleScroll = () => {
       let headerCurrent = header.current;
@@ -118,8 +113,8 @@ function Home({works}) {
       </header>
       <main className="">
         <section className="slide" id="about-me">
-          <img className="shape cone" src="/images/Cone.png" />
-          <img className="shape cylin" src="/images/Cylinder.png" />
+          <Image layout="responsive" className="shape cone" src="/images/Cone.png" alt="Cube" />
+          <Image layout="responsive" className="shape cylin" src="/images/Cylinder.png" alt="Cylinder" />
           <div className="container">
             <div className="row align-items-center pt-5">
               <div className="col-lg-7">
@@ -135,16 +130,11 @@ function Home({works}) {
                       data-aos="fade-right"
                       className="head-line d-flex align-items-center"
                     >
-                      <h1>Hi, I’m Taha Furkan Güler</h1>
-                      <img src="/images/hello.png" />
+                      <h1>{about[0]?.Name}</h1>
+                      <Image layout="responsive" src="/images/hello.png" alt="Hello" />
                     </div>
                     <p className="mt-3">
-                      Hi, I'm Furkan, I'm 22 years old and I live in Istanbul. I
-                      am a designer who likes to get away from the ordinary with
-                      creative thoughts and expand these thoughts with my
-                      curiosity. I always keep my sense of curiosity awake to
-                      nurture my artistic side. In my opinion, design should be
-                      a solution to problems. That's why I'm here for you
+                      {about[0]?.Description}
                     </p>
                     <a
                       href="https://www.linkedin.com/in/taha-furkan-güler-a11261145/?ref=tahafurkanguler.works"
@@ -154,14 +144,14 @@ function Home({works}) {
                       About Me
                     </a>
                   </Fade>
-                  <img className="cube" src="/images/Cube.png" />
+                  <Image layout="responsive" className="cube" src="/images/Cube.png" alt="Cube" />
                 </div>
               </div>
               <div className="col-lg-5">
                 <Fade direction="right" duration={750}>
                   <div className="image-box" data-aos="fade-left">
-                    <img className="pp" src="/images/taha-furkan-guler.png" />
-                    <img className="shape thor" src="/images/Thorus.png" />
+                    <Image layout="responsive" className="pp" src="/images/taha-furkan-guler.png" alt="Taha Furkan Güler Profile Picture" />
+                    <Image layout="responsive" className="shape thor" src="/images/Thorus.png" alt="Thorus" />
                   </div>
                 </Fade>
               </div>
@@ -176,6 +166,7 @@ function Home({works}) {
                       href="https://www.behance.net/tahafurkangler/?ref=tahafurkanguler.works"
                       // ref="noopener"
                       target="_blank"
+                      rel="noreferrer" 
                     >
                       <BsBehance size={39} />
                     </a>
@@ -185,6 +176,7 @@ function Home({works}) {
                       href="https://www.linkedin.com/in/taha-furkan-güler-a11261145/?ref=tahafurkanguler.works"
                       // ref="noopener"
                       target="_blank"
+                      rel="noreferrer" 
                     >
                       <FaLinkedinIn size={34} />
                     </a>
@@ -194,6 +186,7 @@ function Home({works}) {
                       href="https://www.instagram.com/furkanguuler/?ref=tahafurkanguler.works"
                       // ref="noopener"
                       target="_blank"
+                      rel="noreferrer" 
                     >
                       <BsInstagram size={32} />
                     </a>
@@ -230,7 +223,7 @@ function Home({works}) {
               <Fade direction="up" delay={100} className="col-lg-4 col-md-12">
                   <div data-aos="zoom-in" className="services-box">
                     <div className="img">
-                      <img src="/images/web-design-service.png" />
+                      <Image layout="responsive" src="/images/web-design-service.png" alt="Web Design Service" />
                     </div>
                     <div className="s-text-box">
                       
@@ -246,7 +239,7 @@ function Home({works}) {
               <Fade direction="up" delay={150} className="col-lg-4 col-md-12">
                   <div data-aos="zoom-in" className="services-box">
                     <div className="img">
-                      <img src="/images/branding.png" />
+                      <Image layout="responsive" src="/images/branding.png" alt="Branding Service" />
                     </div>
                     <div className="s-text-box">
                       <h3>Branding</h3>
@@ -261,7 +254,7 @@ function Home({works}) {
               <Fade direction="up" delay={200} className="col-lg-4 col-md-12">
                   <div data-aos="zoom-in" className="services-box">
                     <div className="img">
-                      <img src="/images/market.png" />
+                      <Image layout="responsive" src="/images/market.png" alt="Market Service" />
                     </div>
                     <div className="s-text-box">
                       <h3>Marketing</h3>
@@ -363,7 +356,7 @@ function Home({works}) {
               <Fade direction="left" duration={1000} delay={200} className="col-12">
                 <article className="work-post">
                   <a href={works[0]?.Link}>
-                    <img src={works[0]?.Image[0].thumbnails.large.url} alt={works[0]?.Name} />
+                    <Image layout="responsive" src={works[0]?.Image[0].thumbnails.large.url} alt={works[0]?.Name} />
                     <div className="box-content">
                       <div className="cat-view">
                       {works[0]?.Tags.map((tag, i) => (
@@ -387,7 +380,7 @@ function Home({works}) {
               <Fade direction="left" duration={1000} delay={100} className="col-lg-8 mt-3">
                 <article data-aos="fade-left" className="work-post">
                   <a href={works[1]?.Link}>
-                    <img src={works[1]?.Image[0].thumbnails.large.url} alt={works[1]?.Name} />
+                    <Image layout="responsive" src={works[1]?.Image[0].thumbnails.large.url} alt={works[1]?.Name} />
                     <div className="box-content">
                       <div className="cat-view-2">
                         {works[1]?.Tags.map((tag, i) => (
@@ -413,7 +406,7 @@ function Home({works}) {
                   <div className="col-lg-12 mt-3">
                     <article data-aos="fade-right" className="work-post-2">
                       <a href={works[2]?.Link}>
-                        <img src={works[2]?.Image[0].thumbnails.large.url} alt={works[2]?.Name} />
+                        <Image layout="responsive" src={works[2]?.Image[0].thumbnails.large.url} alt={works[2]?.Name} />
                         <div className="box-content">
                           <div className="cat-view-2 c-cat-view">
                           {works[2]?.Tags.map((tag, i) => (
@@ -433,7 +426,7 @@ function Home({works}) {
                   <div className="col-lg-12 mt-3">
                     <article data-aos="fade-left" className="work-post-2">
                       <a href={works[3]?.Link}>
-                        <img src={works[3]?.Image[0].thumbnails.large.url} alt={works[3]?.Name} />
+                        <Image layout="responsive" src={works[3]?.Image[0].thumbnails.large.url} alt={works[3]?.Name} />
                         <div className="box-content">
                           <div className="cat-view-2 c-cat-view">
                           {works[3]?.Tags.map((tag, i) => (
@@ -467,14 +460,14 @@ function Home({works}) {
       </main>
       <footer className="mt-5">
         <div className="footer-inner-wrap">
-          <img className="ft-shape cube-2" src="/images/Cube.png" />
-          <img className="ft-shape sphere" src="/images/Sphere.png" />
-          <img className="ft-shape helix" src="/images/Helix.png" />
-          <img className="ft-shape pyramid" src="/images/Pyramid.png" />
+          <Image  layout="responsive"  className="ft-shape cube-2" src="/images/Cube.png" alt="Cube" />
+          <Image layout="responsive"  className="ft-shape sphere" src="/images/Sphere.png" alt="Sphere" />
+          <Image  layout="responsive" className="ft-shape helix" src="/images/Helix.png" alt="Helix" />
+          <Image layout="responsive"  className="ft-shape pyramid" src="/images/Pyramid.png" alt="Pyramid" />
           <div className="wave-block animation-wave"></div>
           <div className="text-box text-center pt-5-5">
            <Fade direction="up" cascade={true} duration={650} delay={50} damping={0.25}>
-           <h1>Let's work together</h1>
+           <h1>Let&apos;s work together</h1>
             <span className="mt-3">
               I can help you <b>boost</b> your project
             </span>
@@ -527,9 +520,11 @@ function Home({works}) {
 
 export async function getStaticProps() {
   const works = await getTable("Works");
+  const about = await getTable('About');
   return {
     props: {
       works,
+      about,
     },
     revalidate: 600,
   };
