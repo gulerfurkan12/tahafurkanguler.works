@@ -1,6 +1,6 @@
 module.exports = {
     title:'Taha Furkan Güler - UI & UX Designer',
-    description:"Hi, I'm Furkan, I'm 22 years old and I live in Istanbul. I am a designer who likes to get away from the ordinary with creative thoughts and expand these thoughts with my curiosity.",
+    description:"UI and UX Designer and Digital Artist based in Istanbul, Turkey",
     lang:'en',
     siteUrl:'https://www.tahafurkanguler.works/',
     author:{

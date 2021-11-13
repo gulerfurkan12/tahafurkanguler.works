@@ -10,11 +10,12 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang={SiteConfig.lang}>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet" />
+          <title>{SiteConfig.title}</title>
           <meta name="robots" content="follow, index" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta name="description" content={SiteConfig.description} />
