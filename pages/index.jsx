@@ -112,8 +112,8 @@ function Home({works, about}) {
       </header>
       <main className="">
         <section className="slide" id="about-me">
-          <Image layout="responsive" className="shape cone" src="/images/Cone.png" alt="Cube" />
-          <Image layout="responsive" className="shape cylin" src="/images/Cylinder.png" alt="Cylinder" />
+            <img className="cone shape"  src="/images/Cone.png" alt="Cube" />
+            <img className="cylin shape"  src="/images/Cylinder.png" alt="Cylinder" />
           <div className="container">
             <div className="row align-items-center pt-5">
               <div className="col-lg-7">
@@ -130,7 +130,7 @@ function Home({works, about}) {
                       className="head-line d-flex align-items-center"
                     >
                       <h1>{about[0]?.Name}</h1>
-                      <Image layout="responsive" src="/images/hello.png" alt="Hello" />
+                      <img  src="/images/hello.png" alt="Hello" />
                     </div>
                     <p className="mt-3">
                       {about[0]?.Description}
@@ -143,14 +143,14 @@ function Home({works, about}) {
                       About Me
                     </a>
                   </Fade>
-                  <Image layout="responsive" className="cube" src="/images/Cube.png" alt="Cube" />
+                    <img className="cube" src="/images/Cube.png" alt="Cube" />
                 </div>
               </div>
               <div className="col-lg-5">
                 <Fade direction="right" duration={750}>
                   <div className="image-box" data-aos="fade-left">
-                    <Image layout="responsive" className="pp" src="/images/taha-furkan-guler.png" alt="Taha Furkan Güler Profile Picture" />
-                    <Image layout="responsive" className="shape thor" src="/images/Thorus.png" alt="Thorus" />
+                      <img className="pp" src="/images/taha-furkan-guler.png" alt="Taha Furkan Güler Profile Picture" />
+                      <img className="shape thor" src="/images/Thorus.png" alt="Thor" />
                   </div>
                 </Fade>
               </div>
@@ -221,9 +221,9 @@ function Home({works, about}) {
 
               <Fade direction="up" delay={100} className="col-lg-4 col-md-12">
                   <div data-aos="zoom-in" className="services-box">
-                    <div className="img">
-                      <Image layout="responsive" src="/images/web-design-service.png" alt="Web Design Service" />
-                    </div>
+                  <div className="img">
+                  <img  src="/images/web-design-service.png" alt="Web Design Service" />
+                  </div>
                     <div className="s-text-box">
                       
                       <h3>Web Design</h3>
@@ -237,9 +237,9 @@ function Home({works, about}) {
 
               <Fade direction="up" delay={150} className="col-lg-4 col-md-12">
                   <div data-aos="zoom-in" className="services-box">
-                    <div className="img">
-                      <Image layout="responsive" src="/images/branding.png" alt="Branding Service" />
-                    </div>
+                     <div className="img">
+                     <img src="/images/branding.png" alt="Branding Service" />
+                     </div>
                     <div className="s-text-box">
                       <h3>Branding</h3>
                       <p>
@@ -252,9 +252,9 @@ function Home({works, about}) {
 
               <Fade direction="up" delay={200} className="col-lg-4 col-md-12">
                   <div data-aos="zoom-in" className="services-box">
-                    <div className="img">
-                      <Image layout="responsive" src="/images/market.png" alt="Market Service" />
-                    </div>
+                   <div className="img">
+                   <img  src="/images/market.png" alt="Market Service" />
+                   </div>
                     <div className="s-text-box">
                       <h3>Marketing</h3>
                       <p>
@@ -355,7 +355,7 @@ function Home({works, about}) {
               <Fade direction="left" duration={1000} delay={200} className="col-12">
                 <article className="work-post">
                   <a href={works[0]?.Link}>
-                    <Image layout="responsive" src={works[0]?.Image[0].thumbnails.large.url} alt={works[0]?.Name} />
+                    <img src={works[0]?.Image[0].thumbnails.large.url} alt={works[0]?.Name} />
                     <div className="box-content">
                       <div className="cat-view">
                       {works[0]?.Tags.map((tag, i) => (
@@ -379,7 +379,7 @@ function Home({works, about}) {
               <Fade direction="left" duration={1000} delay={100} className="col-lg-8 mt-3">
                 <article data-aos="fade-left" className="work-post">
                   <a href={works[1]?.Link}>
-                    <Image layout="responsive" src={works[1]?.Image[0].thumbnails.large.url} alt={works[1]?.Name} />
+                    <img src={works[1]?.Image[0].thumbnails.large.url} alt={works[1]?.Name} />
                     <div className="box-content">
                       <div className="cat-view-2">
                         {works[1]?.Tags.map((tag, i) => (
@@ -405,7 +405,7 @@ function Home({works, about}) {
                   <div className="col-lg-12 mt-3">
                     <article data-aos="fade-right" className="work-post-2">
                       <a href={works[2]?.Link}>
-                        <Image layout="responsive" src={works[2]?.Image[0].thumbnails.large.url} alt={works[2]?.Name} />
+                        <img  src={works[2]?.Image[0].thumbnails.large.url} alt={works[2]?.Name} />
                         <div className="box-content">
                           <div className="cat-view-2 c-cat-view">
                           {works[2]?.Tags.map((tag, i) => (
@@ -425,7 +425,7 @@ function Home({works, about}) {
                   <div className="col-lg-12 mt-3">
                     <article data-aos="fade-left" className="work-post-2">
                       <a href={works[3]?.Link}>
-                        <Image layout="responsive" src={works[3]?.Image[0].thumbnails.large.url} alt={works[3]?.Name} />
+                        <img src={works[3]?.Image[0].thumbnails.large.url} alt={works[3]?.Name} />
                         <div className="box-content">
                           <div className="cat-view-2 c-cat-view">
                           {works[3]?.Tags.map((tag, i) => (
@@ -459,10 +459,10 @@ function Home({works, about}) {
       </main>
       <footer className="mt-5">
         <div className="footer-inner-wrap">
-          <Image  layout="responsive"  className="ft-shape cube-2" src="/images/Cube.png" alt="Cube" />
-          <Image layout="responsive"  className="ft-shape sphere" src="/images/Sphere.png" alt="Sphere" />
-          <Image  layout="responsive" className="ft-shape helix" src="/images/Helix.png" alt="Helix" />
-          <Image layout="responsive"  className="ft-shape pyramid" src="/images/Pyramid.png" alt="Pyramid" />
+          <img   className="ft-shape cube-2" src="/images/Cube.png" alt="Cube" />
+          <img  className="ft-shape sphere" src="/images/Sphere.png" alt="Sphere" />
+          <img  className="ft-shape helix" src="/images/Helix.png" alt="Helix" />
+          <img  className="ft-shape pyramid" src="/images/Pyramid.png" alt="Pyramid" />
           <div className="wave-block animation-wave"></div>
           <div className="text-box text-center pt-5-5">
            <Fade direction="up" cascade={true} duration={650} delay={50} damping={0.25}>

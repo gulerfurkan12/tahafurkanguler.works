@@ -287,16 +287,18 @@ body {
   .cube {
     position: absolute;
     width: 150px;
-    height: 150px;
-    left: 30%;
-    top: 450px;
+    height: 140px;
+    left: 30% !important;
+    top: 450px !important;
     opacity: 0.8;
+    z-index:-1;
   }
   .cylin {
+    position: absolute;
     width: 165px;
     height: 165px;
-    right: 10px;
-    top: 50px;
+    right: 10px !important;
+    top: 50px !important;
     opacity: 0.9;
     filter: blur(3px);
     z-index: -1;
