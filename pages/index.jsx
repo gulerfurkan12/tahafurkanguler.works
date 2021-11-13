@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 import Logo from './components/icons/Logo';
 import Wave from './components/icons/Wave';
 import Wave2 from './components/icons/Wave2';
@@ -8,7 +8,6 @@ import { Fade } from "react-awesome-reveal";
 import {CircleProgress} from 'react-gradient-progress'
 import { useInView } from 'react-intersection-observer';
 import {getTable} from '../lib/airtable'
-import Image from 'next/image'
 
 
 function Home({works, about}) {
