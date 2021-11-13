@@ -1,14 +1,30 @@
 const path = require('path')
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
+const withPWA = require('next-pwa');
 
-module.exports = {
-  reactStrictMode: true,
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-  },
-  images: {
-    domains: ['dl.airtable.com']
-  },
-  env:{
-    id:'local'
-  },
+const nextConfig = (phase) => {
+  const isDev = phase === PHASE_DEVELOPMENT_SERVER
+
+  return{
+    reactStrictMode: true,
+    sassOptions: {
+      includePaths: [path.join(__dirname, 'styles')],
+    },
+    images: {
+      domains: ['dl.airtable.com']
+    },
+    env:{
+      id:'local'
+    },
+    pwa:{
+      dest:'public',
+      disable:isDev
+    },
+    
+  }
 }
+
+
+module.exports = (phase) => withPWA(nextConfig(phase))
+
+
